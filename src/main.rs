@@ -10,7 +10,7 @@ fn main() {
 
     // Get today's date
     let today = Local::now().naive_local().date();
-  
+
     // Calculate the number of days and weekdays until LDOC, excluding spring break from weekdays
     let mut days_until_ldoc = 0;
     let mut weekdays_until_ldoc = 0;
@@ -22,7 +22,7 @@ fn main() {
                 weekdays_until_ldoc += 1;
             }
         }
-        date = date + chrono::Duration::days(1);
+        date += chrono::Duration::days(1);
     }
 
     println!(
@@ -30,4 +30,3 @@ fn main() {
         days_until_ldoc, weekdays_until_ldoc
     );
 }
-
